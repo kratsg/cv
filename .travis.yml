@@ -11,7 +11,7 @@ before_install:
 script:
   - make
   - mkdir deploy
-  - cp cv_GiordonStark.pdf deploy/ cv_GiordonStark.pdf
+  - cp cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
 
 deploy:
   - provider: pages
