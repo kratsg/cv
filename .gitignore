@@ -6,4 +6,4 @@
 *.log
 *.lot
 *.toc
-*.pdf
+/cv_GiordonStark.pdf
