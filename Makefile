@@ -3,11 +3,11 @@ SOURCES=$(wildcard ./moderncv/*.sty)
 all: cv_GiordonStark.pdf
 
 %.pdf: %.tex $(SOURCES)
-				pdflatex -interaction=nonstopmode -halt-on-error $(basename $@)
+				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				bibtex papers
 				bibtex talks
-				pdflatex -interaction=nonstopmode -halt-on-error $(basename $@)
-				pdflatex -interaction=nonstopmode -halt-on-error $(basename $@)
+				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
+				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				make cleanpartial
 
 cleanpartial:
