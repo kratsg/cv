@@ -9,6 +9,7 @@ before_install:
   - sudo apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended lmodern texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latex-xcolor texlive-bibtex-extra
 
 script:
+  - sed -i '' "s/TRAVIS_COMMIT/${TRAVIS_COMMIT:0:6}/g" env.tex
   - make
   - mkdir deploy
   - cp cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf

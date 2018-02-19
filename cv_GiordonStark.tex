@@ -23,6 +23,14 @@
   \let\section\origsection% restore original definition of \section
 }
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\input{env}
+\fancyhead{}
+\fancyfoot{}
+\rhead{\footnotesize Built \today\ from \href{https://github.com/kratsg/cv/tree/\COMMITHASH}{\COMMITHASH}}
+
 %______________________________________________________________________________________________________________________
 \begin{document}
 \name{\Large Giordon Stark}

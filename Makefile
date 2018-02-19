@@ -1,4 +1,4 @@
-SOURCES=$(wildcard ./moderncv/*.sty)
+SOURCES=$(wildcard ./resume.cls ./*.bib ./env.tex)
 
 all: cv_GiordonStark.pdf
 
