@@ -9,8 +9,8 @@ before_install:
   - sudo apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended lmodern texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latex-xcolor texlive-bibtex-extra
 
 script:
-  - sed -i '' -e "s/TRAVISCOMMITHASH/${TRAVIS_COMMIT:0:6}/g" env.tex
-  - sed -i '' -e "s/TRAVISBUILDNUMBER/${TRAVIS_BUILD_NUMBER}/g" env.tex
+  - sed -i env.tex -e "s/TRAVISCOMMITHASH/${TRAVIS_COMMIT:0:6}/g"
+  - sed -i env.tex -e "s/TRAVISBUILDNUMBER/${TRAVIS_BUILD_NUMBER}/g"
 
   - make
   - mkdir deploy
