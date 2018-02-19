@@ -10,7 +10,7 @@ before_install:
 
 script:
   - sed -i env.tex -e "s/TRAVISCOMMITHASH/${TRAVIS_COMMIT:0:6}/g"
-  - sed -i env.tex -e "s/TRAVISBUILDNUMBER/${TRAVIS_BUILD_NUMBER}/g"
+  - sed -i env.tex -e "s/TRAVISBUILDNUMBER/${TRAVIS_BUILD_ID}/g"
 
   - make
   - mkdir deploy
