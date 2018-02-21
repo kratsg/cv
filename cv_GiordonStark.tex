@@ -1,11 +1,11 @@
 %______________________________________________________________________________________________________________________
-% @brief    LaTeX2e Resume for Kamil K Wojcicki
+% @briefLaTeX2e Resume for Kamil K Wojcicki
 \documentclass[margin,line]{resume}
 \usepackage[colorlinks = true,
-            linkcolor = blue,
-            urlcolor  = blue,
-            citecolor = blue,
-            anchorcolor = blue]{hyperref}
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
 
 \usepackage{fontawesome}
 
@@ -29,8 +29,10 @@
 \input{env}
 \fancyhead{}
 \fancyfoot{}
-\lfoot{\footnotesize \href{{https://kratsg.github.io/cv/cv_GiordonStark.pdf}}{Giordon Stark's Curriculum Vitae}}
+\lfoot{\footnotesize \href{{https://kratsg.github.io/cv/cv_GiordonStark.pdf}}{\faicon{link}~Giordon Stark's Curriculum Vitae}}
 \rfoot{\footnotesize Built \href{https://travis-ci.org/kratsg/cv/builds/\BUILDNUMBER}{\today}\ from \href{https://github.com/kratsg/cv/tree/\COMMITHASH}{\COMMITHASH}}
+
+\linespread{1.0}
 
 %______________________________________________________________________________________________________________________
 \begin{document}
@@ -41,135 +43,130 @@
 % Contact Information
 \section{\mysidestyle Contact\\Information}
 
-Giordon Stark						\hfill \href{mailto:gstark@cern.ch}{\faicon{envelope}~gstark@cern.ch}
+Giordon Stark                 \hfill \href{mailto:gstark@cern.ch}{\faicon{envelope}~gstark@cern.ch}
 \vspace{0mm}\\\vspace{0mm}%
-5640 S. Ellis Ave., PRC\#161 \hfill \href{https://github.com/kratsg}{\faicon{github}~kratsg} {\large\rmfamily\textbullet} \href{https://twitter.com/kratsg}{\faicon{twitter}~kratsg}
+5640 S. Ellis Ave., PRC\#161  \hfill \href{https://github.com/kratsg}{\faicon{github}~kratsg} {\large\rmfamily\textbullet} \href{https://twitter.com/kratsg}{\faicon{twitter}~kratsg}
 \vspace{0mm}\\\vspace{0mm}%
-Chicago, IL \ \ \ 60637    \hfill \href{https://orcid.org/0000-0001-6616-3433}{\faicon{key}~0000-0001-6616-3433} \\
+Chicago, IL \ \ \ 60637       \hfill \href{https://orcid.org/0000-0001-6616-3433}{\faicon{key}~0000-0001-6616-3433} \\
 \vspace{-4.5mm}%
 
 %__________________________________________________________________________________________________________________
 % Research Interests
 \section{\mysidestyle Research\\Interests}
 
-High Energy Particle Physics, Supersymmetry, Hadronic Final States, Jet Substructure, \\
-Beyond the Standard Model, Brownian Thermal Noise, Quantum Information and Field Theory.
+High Energy Particle Physics, Supersymmetry and Physics Beyond the Standard
+Model, Boosted Object Reconstruction and Hadronic Final States, Jet
+Substructure, Brownian Thermal Noise, Quantum Information and Field Theory.
 
 %__________________________________________________________________________________________________________________
-    % Education
-    \section{\mysidestyle Education}
+% Education
+\section{\mysidestyle Education}
 
-	\textbf{University of Chicago}, Chicago, Illinois \vspace{2mm}\\\vspace{1mm}%
-	\textsl{PhD Student} \hfill \textbf{September 2012 -- Present}\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Research Group: ATLAS experiment at CERN
-		\item Advisor: David Miller
-		\item Other Activities: Instrumentation for ATLAS Trigger System
-	\end{list2}\vspace{-1.5mm}
+\textbf{University of Chicago}, Chicago, Illinois \hfill \textbf{September 2012 -- expected May 2018}\\
+\textsl{Ph.D. Physics (expected Spring 2018)}, David Miller\\[5mm]
+%
+\textbf{California Institute of Technology}, Pasadena, California \hfill \textbf{ Sep 2008 -- June 2012}\\
+\textsl{B.S. Physics}, Kenneth Libbrecht and Harvey Newman\\[5mm]
+%
+\textbf{Florida Atlantic University} Boca Raton, Florida \hfill \textbf{Aug 2004 -- June 2008}\\
+\textsl{Engineering Scholars Program} -- dual-enrollment during high school\\[5mm]
+%
+\textbf{Suncoast Community High School}, Riviera Beach, Florida \hfill \textbf{Aug 2004 -- Dec 2008}\\
+\textsl{Math, Science and Engineering Program}
 
-    \textbf{California Institute of Technology}, Pasadena, California \vspace{2mm}\\\vspace{1mm}%
-    \textsl{B.S. Physics} GPA: 3.7/4.0 \hfill \textbf{ Sep 2008 -- June 2012}\vspace{-3mm}\\\vspace{-1mm}%
-    \begin{list2}
-        \item Advisors: Kenneth Libbrecht, Harvey Newman
-    \end{list2}\vspace{-2mm}
+\section{\mysidestyle Dissertation}
 
-	\textsl{Suncoast Community High School (Math, Science, and Engineering)} \hfill \textbf{Aug 2005 -- Dec 2008}\vspace{-3mm}\\\vspace{-5mm}%
-
-	\textsl{Florida Atlantic University (Engineering Scholars Program)} \hfill \textbf{Aug 2004 -- June 2008}\vspace{-3mm}\\\vspace{-1mm}%
+\textbf{\textsl{Ph.D.}} \href{https://kratsg.github.io/thesis/}{\faicon{link}}~\textsl{The search for supersymmetry in hadronic final states using boosted object reconstruction}
+\textbf{\textsl{B.S.}}\hspace{3mm} \href{https://www.dropbox.com/s/h0mpop96cn563bq/Thesis.pdf?dl=0}{\faicon{link}}~\textsl{Optical Coating Brownian Thermal Noise in Gravitational Wave Detectors}
 
 %__________________________________________________________________________________________________________________
-    % Professional Experience
-    \section{\mysidestyle Professional\\Experience}
+% Professional Experience
+\section{\mysidestyle Professional\\Experience}
 
-	\textbf{University of Chicago}, Chicago, Illinois \vspace{2mm}\\\vspace{1mm}%
-	\textsl{Graduate Student Research Assistant} \hfill \textbf{June 2012 -- Present}\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Built a python tool to scan the phase-space of an analysis to identify performant variables to discriminate signal over background: \href{https://github.com/kratsg/Optimization}{root-optimize}
-		\item Created an analysis framework for general physics analyses within ATLAS including Standard Model searches, SUSY, Exotics, Higgs, and Trigger-Level analysis: \href{https://xaodanahelpers.readthedocs.io/en/master/}{xAODAnaHelpers}
-		\item Development of a python framework that combines ROOT and NumPy: \href{http://scikit-hep.org/root_numpy/}{root\_numpy}
-		\item Worked on electronic instrumentation to improve the ATLAS Trigger system in Run 3 and beyond for boosted objects: \href{https://gfex.cern.ch/}{gFEX: global feature extraction}
-		\item Editor of the gFEX Final Design Report describing the technical requirements and needs of gFEX in the ATLAS Calorimeter ecosystem
-	\end{list2}
+\textbf{CERN}, Geneva, Switzerland \hfill \textbf{November 2013 -- Present}\\
+\textsl{Ph.D. Student, ATLAS Experiment}
+\begin{list2}
+  \item Built a python tool to scan the phase-space of an analysis to identify performant variables to discriminate signal over background: \href{https://github.com/kratsg/Optimization}{root-optimize}
+  \item Created an analysis framework for general physics analyses within ATLAS including Standard Model searches, SUSY, Exotics, Higgs, and Trigger-Level analysis: \href{https://xaodanahelpers.readthedocs.io/en/master/}{xAODAnaHelpers}
+  \item Development of a python framework that combines ROOT and NumPy: \href{http://scikit-hep.org/root_numpy/}{root\_numpy}
+  \item Worked on electronic instrumentation to improve the ATLAS Trigger system in Run 3 and beyond for boosted objects: \href{https://gfex.cern.ch/}{gFEX: global feature extraction}
+  \item Editor of the gFEX Final Design Report describing the technical requirements and needs of gFEX in the ATLAS Calorimeter ecosystem
+\end{list2}
 
-	\textsl{Graduate Student Teaching Assistant} \hfill \textbf{June 2012 -- Present}\\%
-	\textbf{Courses} (teaching materials and reviews available on request)\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item PHY211 -- Advanced Physics Laboratory \hfill \textbf{Fall Term 2016-2017}
-		\item PHY225 -- Advanced Electromagnetism \hfill \textbf{Winter Term 2014-2015}
-		\item PHY141 -- Advanced Mechanics \hfill \textbf{Fall Term 2013-2014}
-		\item PHY131 -- Honors Mechanics \hfill \textbf{Summer Term 2012-2013}
-		\item PHY132b -- Honors Special Relativity and Electromagnetism \hfill \textbf{Winter Term 2012-2013}
-		\item PHY121 -- Introductory Mechanics \hfill \textbf{Fall Term 2012-2013}
-	\end{list2}
+\textbf{University of Chicago}, Chicago, Illinois \hfill \textbf{June 2012 -- Present}\\
+\textsl{Graduate Student Teaching Assistant}\\
+\textbf{Courses} (teaching materials and reviews available on request)
+\begin{list2}
+  \item PHY211 -- Advanced Physics Laboratory \hfill \textbf{Fall Term 2016-2017}
+  \item PHY225 -- Advanced Electromagnetism \hfill \textbf{Winter Term 2014-2015}
+  \item PHY141 -- Advanced Mechanics \hfill \textbf{Fall Term 2013-2014}
+  \item PHY131 -- Honors Mechanics \hfill \textbf{Summer Term 2012-2013}
+  \item PHY132b -- Honors Special Relativity and Electromagnetism \hfill \textbf{Winter Term 2012-2013}
+  \item PHY121 -- Introductory Mechanics \hfill \textbf{Fall Term 2012-2013}
+\end{list2}
 
-	\textbf{Adaptly}, New York City, New York \vspace{2mm}\\\vspace{1mm}%
-	\textsl{Developer} \hfill \textbf{June 2012 -- September 2012}\\
-	\textbf{Supervisors}: Sean Shillo, Will Highduchek\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item \url{https://adaptly.com}
-		\item Developed projects and implemented infrastructure for the Adaptly Self-Serve platform
-		\item Worked with ``Big Data'' for a large portion of my time at Adaptly
-	\end{list2}
+\textbf{University of Chicago}, Chicago, Illinois  \hfill \textbf{June 2012 -- May 2013}\\
+\textsl{Graduate Student Research Assistant in Ultracold Atomic Physics}
+\begin{list2}
+  \item Started a project on trapping of water droplets using temperature gradients at room pressure
+\end{list2}
 
-    \pagebreak
+\textbf{Adaptly}, New York City, New York\hfill \textbf{June 2012 -- September 2012}\\
+\textsl{Developer}, \textbf{Supervisors}: Sean Shillo, Will Highduchek
+\begin{list2}
+  \item \url{https://adaptly.com}
+  \item Developed projects and implemented infrastructure for the Adaptly Self-Serve platform
+  \item Worked with ``Big Data'' for a large portion of my time at Adaptly
+\end{list2}
 
-    \textbf{Basic Web Programming}, Caltech \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Student Instructor} \hfill \textbf{Jan 2011 -- June 2012}\\
-    \textbf{Course Sponsor}: Adam Wierman\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item \url{http://ugcs.caltech.edu/~kratsg/PA070b} (\textbf{materials available on request})
-		\item This class was taught during Caltech's Winter Term
-	\end{list2}
+\textbf{Basic Web Programming}, Caltech \hfill \textbf{Jan 2011 -- June 2012}\\
+\textsl{Student Instructor}, \textbf{Course Sponsor}: Adam Wierman
+\begin{list2}
+  \item \url{http://ugcs.caltech.edu/~kratsg/PA070b} (\textbf{materials available on request})
+  \item This class was taught during Caltech's Winter Term
+\end{list2}
 
-    \textbf{Laser Interferometer Gravitational Observatory}, Caltech \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Research Assistant} \hfill \textbf{Sep 2011 -- June 2012}\\
-    \textbf{Mentor}: Rana Adhikari\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Researching the effects of Brownian Thermal Noise and how it relates to the Quality Factors and Loss Angles of thin-film coated mirrors used in LIGO
-	\end{list2}
+\textbf{Laser Interferometer Gravitational Observatory}, Caltech \hfill \textbf{Sep 2011 -- June 2012}\\
+\textsl{Research Assistant}, \textbf{Advisor}: Rana Adhikari
+\begin{list2}
+  \item Researching the effects of Brownian Thermal Noise and how it relates to the Quality Factors and Loss Angles of thin-film coated mirrors used in LIGO
+\end{list2}
 
-    \textbf{Laser Interferometer Gravitational Observatory}, MIT \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Research Assistant} \hfill \textbf{June 2011 -- Sep 2011}\\
-    \textbf{Mentors}: Sam Waldman, Rai Weiss, Hugo Paris\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Developed control systems for monitoring the state of the LIGO system via multiple physical chassis setups and software collaborations
-		\item Developed software to analyze noise levels in LIGO hardware (capacitative position sensors and various chassis), analyzed noise levels in the hardware to verify its quality before sending it to other LIGO labs in the country
-		\item Worked on the feed-forward systems to minimize mechanical vibrations in the system
-	\end{list2}
+\textbf{Laser Interferometer Gravitational Observatory}, MIT \hfill \textbf{June 2011 -- Sep 2011}\\
+\textsl{Research Assistant}, \textbf{Advisors}: Sam Waldman, Rai Weiss, Hugo Paris
+\begin{list2}
+  \item Developed control systems for monitoring the state of the LIGO system via multiple physical chassis setups and software collaborations
+  \item Developed software to analyze noise levels in LIGO hardware (capacitative position sensors and various chassis), analyzed noise levels in the hardware to verify its quality before sending it to other LIGO labs in the country
+  \item Worked on the feed-forward systems to minimize mechanical vibrations in the system
+\end{list2}
 
-    \textbf{Computational Physics Lab}, Caltech \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Research Assistant and Computational Specialist} \hfill \textbf{March 2011 -- June 2011}\\
-    \textbf{Mentor}: Frank Rice\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Developed a new version of the Caltech's Sophomore Physics Laboratory Mathematica CurveFit program (program is still being developed; \textbf{code/demonstration available upon request})
-	\end{list2}
+\textbf{Computational Physics Lab}, Caltech \hfill \textbf{March 2011 -- June 2011}\\
+\textsl{Research Assistant and Computational Specialist}, \textbf{Advisor}: Frank Rice
+\begin{list2}
+  \item Developed a new version of the Caltech's Sophomore Physics Laboratory Mathematica CurveFit program (program is still being developed; \textbf{code/demonstration available upon request})
+\end{list2}
 
-	\textbf{Information Systems and Technology}, Caltech \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Teaching Assistant} \hfill \textbf{March 2011 -- June 2011}\vspace{1.5mm}\\\vspace{0mm}%
-    \textbf{Course Instructor}: Shuki Bruck\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Provided 2-hour Office Hour session once a week to assist with homework, answer questions about lectures, and improve students' understanding
-		\item Attended lectures, structured and graded homework assignments for $\sim$ 140 students
-	\end{list2}
+\textbf{Information Systems and Technology}, Caltech \hfill \textbf{March 2011 -- June 2011}\\
+\textsl{Teaching Assistant}, \textbf{Course Instructor}: Shuki Bruck
+\begin{list2}
+  \item Provided 2-hour Office Hour session once a week to assist with homework, answer questions about lectures, and improve students' understanding
+  \item Attended lectures, structured and graded homework assignments for $\sim$ 140 students
+\end{list2}
 
-    \textbf{Submillimeter Wave Observatory}, Caltech \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Edward C. and Alice Stone Fellow} \hfill \textbf{June 2010 -- Aug 2010}\\
-    \textbf{Mentors}: Simon Radford and David Miller\\
-	Submillimeter Transmission of Materials\vspace{-3mm}\\\vspace{-1mm}%
-	\begin{list2}
-		\item Designed an optical system that couples the beams from a Fourier Transform Spectrometer to a Bolometer, collimated through a sample, to determine the transmittivity of optical materials in broadband wavelengths (500 Gigahertz to 3.5 Terahertz)
-		\item Results are employed in the design of more efficient submillimeter instruments around the world
-	\end{list2}
+\textbf{Submillimeter Wave Observatory}, Caltech \hfill \textbf{June 2010 -- Aug 2010}\\
+\textsl{Edward C. and Alice Stone Fellow}, \textbf{Advisors}: Simon Radford and David Miller
+\begin{list2}
+  \item Studied the Submillimeter Transmission of Materials
+  \item Designed an optical system that couples the beams from a Fourier Transform Spectrometer to a Bolometer, collimated through a sample, to determine the transmittivity of optical materials in broadband wavelengths (500 Gigahertz to 3.5 Terahertz)
+  \item Results are employed in the design of more efficient submillimeter instruments around the world
+\end{list2}
 
-    \textbf{Basic Web Programming}, Caltech \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Student Instructor} \hfill \textbf{Mar 2010 -- June 2010}\\
-    \textbf{Course Sponsor}: Mani Chandy\vspace{-3mm}\\\vspace{-1mm}%
-    \begin{list2}
-		\item \url{http://ugcs.caltech.edu/~kratsg/PA070c} (\textbf{materials available upon request})
-		\item Taught students to design web pages using HTML, CSS, JavaScript, PHP in combination with javascript libraries and JSON.
-	\end{list2}
-
-    \pagebreak
+\textbf{Basic Web Programming}, Caltech \hfill \textbf{Mar 2010 -- June 2010}
+\textsl{Student Instructor}, \textbf{Course Sponsor}: Mani Chandy
+\begin{list2}
+  \item \url{http://ugcs.caltech.edu/~kratsg/PA070c} (\textbf{materials available upon request})
+  \item Taught students to design web pages using HTML, CSS, JavaScript, PHP in combination with javascript libraries and JSON.
+\end{list2}
 
 %__________________________________________________________________________________________________________________
 % Selected Publications
@@ -194,24 +191,19 @@ Beyond the Standard Model, Brownian Thermal Noise, Quantum Information and Field
 % Computer Skills
 \section{\mysidestyle Programming}
 
-\textsl{Full Stack Developer}, C, C++, VHDL, Perl, Python, \LaTeXe, MySQL, PHP, JavaScript, JSON, HTML, XHTML, XML, CSS, ROOT, COMSOL, Matlab, Mathematica, VHDL
+\textsl{Full Stack Developer}, C, C++, VHDL, Perl, Python, \LaTeXe, MySQL, PHP, JavaScript (NodeJS, React), JSON, HTML, XHTML, XML, CSS, ROOT, COMSOL, Matlab, Mathematica, VHDL, BitBake/OpenEmbedded
 
 %__________________________________________________________________________________________________________________
 % Honours and Awards
 \section{\mysidestyle Honours and\\Awards}
 
-US ATLAS Outstanding Graduate Student Award \hfill \textsl{June 2016}\vspace{1mm}\\%
-Department of Energy, Office of Science Graduate Student Research \hfill \textsl{Oct. 2015 - Jan. 2016}\vspace{1mm}\\%
-US LHC Users Association Lightning Round winner \hfill \textsl{November 2014}\vspace{1mm}\\%
-UChicago Excellence in Graduate Teaching nominee \hfill \textsl{2014, 2013}\vspace{1mm}\\%
-Caltech Excellent TA Award \hfill \textsl{2012}\vspace{1mm}\\%
-Edward C. and Alice Stone Fellow \hfill \textsl{June 2010}\vspace{1mm}\\%
+US ATLAS Outstanding Graduate Student Award \hfill \textsl{June 2016}\\
+Department of Energy, Office of Science Graduate Student Research \hfill \textsl{Oct. 2015 - Jan. 2016}\\
+US LHC Users Association Lightning Round winner \hfill \textsl{November 2014}\\
+UChicago Excellence in Graduate Teaching nominee \hfill \textsl{2015, 2014, 2013}\\
+Caltech Excellent TA Award \hfill \textsl{2012}\\
+Edward C. and Alice Stone Fellow \hfill \textsl{June 2010}
 
 %______________________________________________________________________________________________________________________
 \end{resume}
 \end{document}
-
-
-%______________________________________________________________________________________________________________________
-% EOF
-
