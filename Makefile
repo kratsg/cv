@@ -6,6 +6,7 @@ all: cv_GiordonStark.pdf
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				bibtex papers
 				bibtex talks
+				bibtex works
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				make cleanpartial
