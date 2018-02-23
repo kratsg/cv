@@ -13,7 +13,6 @@ script:
   - sed -i env.tex -e "s/TRAVISBUILDNUMBER/${TRAVIS_BUILD_ID}/g"
 
   - make
-  - mkdir deploy
   - cp cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
 
 deploy:
