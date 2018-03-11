@@ -17,6 +17,8 @@ script:
 
 deploy:
   - provider: pages
+    edge:
+      branch: pages-ivar-set
     skip_cleanup: true
     local_dir: deploy/
     github_token: $GITHUB_TOKEN
