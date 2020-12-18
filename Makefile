@@ -1,6 +1,12 @@
 SOURCES=$(wildcard ./resume.cls ./*.bib ./env.tex)
 
-all: cv_GiordonStark.pdf
+all: cv_GiordonStark.pdf cv_ECSB.pdf
+
+cv_ECSB.pdf: cv_ECSB.tex $(SOURCES)
+				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
+				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
+				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
+				make cleanpartial
 
 %.pdf: %.tex $(SOURCES)
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)

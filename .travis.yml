@@ -14,6 +14,7 @@ script:
 
   - make
   - cp cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
+  - cp cv_ECSB.pdf deploy/cv_ECSB.pdf
 
 deploy:
   - provider: pages
