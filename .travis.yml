@@ -6,7 +6,7 @@ env:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended lmodern texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latex-xcolor texlive-bibtex-extra
+  - sudo apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended lmodern texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-bibtex-extra fonts-font-awesome
 
 script:
   - sed -i env.tex -e "s/TRAVISCOMMITHASH/${TRAVIS_COMMIT:0:6}/g"
