@@ -24,6 +24,7 @@ jobs:
           mv cv_GiordonStark.pdf build/cv_GiordonStark.pdf
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
