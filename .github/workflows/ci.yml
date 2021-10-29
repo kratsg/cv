@@ -1,5 +1,13 @@
 name: Build LaTeX document
-on: [push]
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+  push:
+    branches:
+      - master
+      - main
 
 concurrency:
   group: ci-${{ github.head_ref }}
