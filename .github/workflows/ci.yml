@@ -28,14 +28,13 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv_GiordonStark.tex
-      - name: Move to build directory
+      - name: Move to deploy directory
         run: |
-          mkdir build
-          mv cv_GiordonStark.pdf build/cv_GiordonStark.pdf
+          mv cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         if: github.event_name == 'push'
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          folder: deploy # The folder the action should deploy.
 
