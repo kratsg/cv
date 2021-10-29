@@ -10,6 +10,7 @@ jobs:
         run: |
           sed -i env.tex -e "s/GITHUBCOMMITHASH/${GITHUB_SHA:0:6}/g"
           sed -i env.tex -e "s/GITHUBRUNNUMBER/${GITHUB_RUN_ID}/g"
+          cat env.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
