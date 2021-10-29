@@ -10,7 +10,7 @@ on:
       - main
 
 concurrency:
-  group: ci-${{ github.head_ref }}
+  group: ci-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
