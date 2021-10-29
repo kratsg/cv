@@ -1,5 +1,6 @@
 name: Build LaTeX document
 on: [push]
+
 concurrency:
   group: ${{ github.head_ref }}
   cancel-in-progress: true
