@@ -1,0 +1,22 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Inject environment variables
+        run: |
+          sed -i env.tex -e "s/GITHUBCOMMITHASH/${GITHUB_SHA:0:6}/g"
+          sed -i env.tex -e "s/GITHUBRUNNUMBER/${GITHUB_RUN_ID}/g"
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv_GiordonStark.tex
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+
