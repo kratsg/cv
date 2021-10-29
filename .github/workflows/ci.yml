@@ -3,6 +3,7 @@ on: [push]
 concurrency:
   group: ${{ github.head_ref }}
   cancel-in-progress: true
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
