@@ -24,17 +24,21 @@ jobs:
           sed -i env.tex -e "s/GITHUBCOMMITHASH/${GITHUB_SHA:0:6}/g"
           sed -i env.tex -e "s/GITHUBRUNNUMBER/${GITHUB_RUN_ID}/g"
           cat env.tex
-      - name: Compile LaTeX document
+      - name: Compile cv
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv_GiordonStark.tex
+      - name: Compile SWE resume
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume_GiordonStark_swe.tex
       - name: Move to deploy directory
         run: |
           mv cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
+          mv resume_GiordonStark_swe.pdf deploy/resume_GiordonStark_swe.pdf
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         if: github.event_name == 'push'
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: deploy # The folder the action should deploy.
-

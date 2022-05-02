@@ -1,12 +1,10 @@
 SOURCES=$(wildcard ./resume.cls ./*.bib ./env.tex)
 
-all: cv_GiordonStark.pdf
+all: cv_GiordonStark.pdf resume_GiordonStark_swe.pdf
 
 %.pdf: %.tex $(SOURCES)
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
-				bibtex papers
-				bibtex talks
-				bibtex works
+				if [ -a papers.aux ] ; then bibtex papers; bibtex talks; bibtex works; fi
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				xelatex -interaction=nonstopmode -halt-on-error $(basename $@)
 				make cleanpartial

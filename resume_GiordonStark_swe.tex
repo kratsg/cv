@@ -1,0 +1,186 @@
+%______________________________________________________________________________________________________________________
+% @briefLaTeX2e Resume for Kamil K Wojcicki
+\documentclass[margin,line]{resume}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+
+\usepackage{ifthen}
+\usepackage{listofitems}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage[skins]{tcolorbox}
+
+\usepackage{academicons}
+\usepackage{xcolor}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+\usepackage{fontawesome}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\input{env}
+\fancyhead{}
+\fancyfoot{}
+\lfoot{\hspace{-\sectionwidth}\footnotesize \href{{https://kratsg.github.io/cv/resume_GiordonStark_swe.tex?utm_source=resume_swe}}{\faicon{link}~Giordon Stark's SWE Resume}}
+\rfoot{\footnotesize Built \href{https://github.com/kratsg/cv/actions/runs/\RUNNUMBER}{\today}\ from \href{https://github.com/kratsg/cv/tree/\COMMITHASH}{\COMMITHASH}}
+
+\linespread{1.0}
+
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{mediumgray}{HTML}{444444}
+\definecolor{gray}{HTML}{5D5D5D}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+%\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+
+\colorlet{highlightbarcolor}{lightgray!30}
+\colorlet{headerbarcolor}{darkgray}
+
+\colorlet{headerfontcolor}{white}
+\colorlet{accent}{awesome-red}
+\colorlet{heading}{black}
+\colorlet{emphasis}{black}
+\colorlet{body}{black}
+
+\newcommand{\tag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=0.5ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+\newlength{\jobdateplacelength}
+\newlength{\jobpositionlength}
+\setlength{\jobdateplacelength}{0.5\linewidth}
+\setlength{\jobpositionlength}{0.5\linewidth}
+
+\newlength{\projectdateplacelength}
+\setlength{\projectdateplacelength}{1.0\linewidth}
+\newcommand{\story}[4]{%
+    \begin{minipage}[t]{\jobdateplacelength}% minipage for left column with date/place
+        \footnotesize
+        \begin{minipage}[t]{3mm}% wrap marker in minipage to allow multi-line places
+            \makebox[3mm][c]{\faAngleDoubleDown}
+        \end{minipage}%
+        \hspace{0.5em}%
+        \begin{minipage}[t]{\dimexpr \projectdateplacelength-3mm-0.5em}% wrap place in minipage to allow multi-line places
+            \href{#1}{\normalsize#2}%
+            \ifstrequal{#4}{}{}{%
+            ---
+            \readlist*\mylist{#4}% star option removes surrounding whitespace
+            \foreachitem\x\in\mylist[]{\tag{\x}}%
+            }
+        \end{minipage}%
+    \end{minipage}%
+    \ifstrequal{#3}{}{}{%
+        \par \vspace{-0.5em} \hspace{1.5em}%
+        \begin{minipage}[t]{\dimexpr \linewidth-2em}
+        #3
+        \end{minipage}
+    }%
+    \par\normalsize
+    \vspace{0.25em}
+}
+
+%______________________________________________________________________________________________________________________
+\begin{document}
+\name{\Large Dr. Giordon Stark}
+\begin{resume}
+
+%__________________________________________________________________________________________________________________
+% Contact Information
+\section{\mysidestyle Contact\\Information}
+
+\href{mailto:kratsg@gmail.com}{\faEnvelope~kratsg@gmail.com} \hfill \href{https://github.com/kratsg}{\faGithub~kratsg}
+\vspace{0mm}\\\vspace{0mm}%
+\href{https://www.linkedin.com/in/giordon-stark-5576b71b/}{\faLinkedin~Giordon Stark}  \hfill \href{https://twitter.com/kratsg}{\faTwitter~kratsg}
+\vspace{0mm}\\\vspace{0mm}%
+\href{https://orcid.org/0000-0001-6616-3433}{\aiOrcid~0000-0001-6616-3433} \hfill \href{https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=a+g+ stark}{\aiADS~Publication list (500+ papers)}
+\vspace{0mm}\\\vspace{0mm}%
+\href{https://giordonstark.com/?utm_source=resume}{\faHome~https://giordonstark.com/} \hfill \href{https://kratsg.github.io/cv/cv_GiordonStark.pdf}{\faFileText~curriculum vitae}\\
+\vspace{-6.5mm}%
+
+%__________________________________________________________________________________________________________________
+% Research Interests
+\section{\mysidestyle Summary}
+\begin{list2}
+  \item Jack of all trades, postdoc of one.
+  \item Experimental particle physicist on the ATLAS detector at CERN looking to transition to the private sector.
+  \item ``Big data scientist'' analyzing petabytes of collisions for signs of new physics.
+  \item Passionate about building reusable, robust, containerized data analysis pipelines, creating actionable data products, and developing software to improve user experience.
+\end{list2}
+
+%__________________________________________________________________________________________________________________
+
+\section{\mysidestyle \faCode~Highlighted\\Projects}
+
+{\small
+  \story{https://scikit-hep.org/pyhf/}{pyhf}{Created a python-only hypothesis testing framework which speeds up asymptotic statistical fits by a few orders of magnitude, using tensor algebra libraries such as \texttt{jax} and \texttt{pytorch}.}{statistics,GPU,numpy,scipy,tensorflow,jax,pytorch,auto-diff}
+
+  \story{https://hsf-training.github.io/hsf-training-cicd/}{GitLab CI/CD Training}{Produced a three-hour tutorial using GitLab CI/CD with closed-captioned YouTube videos aimed at teaching physicists how to develop testable and reproducible analyses.}{gitlab,tutorial,continuous integration,python,C++}
+
+  \story{https://pypi.org/project/itkdb/}{itkdb}{Developed a user-friendly python interface to a quasi-RESTful API used to register, test, and ship millions of detector components for the ATLAS detector upgrade in 2028. This speeds up custom tooling needed by third-party vendors for interacting with the database.}{python,betamax,requests,unit tests,integration tests,mongodb}
+
+  \story{https://gfex.cern.ch/}{gFEX}{Collaborated with a team of physicists and engineers to design a single PCB to process 40 TB/s of raw data from the detector. Pioneered the embedded processor firmware currently in use.}{FPGA,firmware,embedded OS,cross-compilation}
+
+  \story{https://gitlab.cern.ch/berkeleylab/labRemote}{labRemote}{Wrote the python-bindings for a C++ framework that slow-controls laboratory hardware, and enhanced the CI/CD to deploy pre-built, relocatable binaries to make it easier for technicians and users to install.}{pybind11,python,C++,CI/CD,wheels}
+}
+
+%__________________________________________________________________________________________________________________
+% Professional Experience
+\section{\mysidestyle \faGears~Work\\History}
+
+\textbf{SCIPP}, Santa Cruz, California \hfill \textbf{August 2018 -- present}\\
+\textsl{Post-doctoral Researcher, ATLAS Experiment at CERN}
+\begin{list2}
+  \item Led the effort within the 5000-person collaboration to adopt GitLab CI/CD for analysis development, paper publication, and documentation.
+  \item Coordinated HPC resources for generating billions of Monte Carlo events for physics analyses
+  \item Organized and instructed in software tutorials for hundreds of physicists.
+  \item Built up the hardware, firmware, front-end, and back-end infrastructure for testing and qualifying CMOS-based electronic chips for the instrumentation upgrade of the ATLAS charged particle tracking detector for the next decade.
+  \item Developed tooling and infrastructure to support the next-generation of data products published by physics collaborations, improving communication with theorists.
+\end{list2}
+
+\textbf{UChicago}, Chicago, Illinois \hfill \faCalendar\ \textbf{August 2012 -- July 2018}\\
+\textsl{Graduate Research Scientist}
+\begin{list2}
+  \item Migrated the 500k+ LOC C++ offline analysis project from SVN to Git and made it public.
+  \item Collaborated with engineers on instrumentation design for the upgrade of the ATLAS detector real-time hardware-based decision-making system to process 40 TB of data every second.
+  \item Developed and maintained a user-friendly C++ analysis framework for physics across multiple domains including Standard Model, searches for new physics, and calibrations.
+  \item Came up with the innovative strategy to use OpenEmbedded firmware layer in hardware instrumentation which paved the way for embedded processor design in High Energy Physics
+\end{list2}
+
+%__________________________________________________________________________________________________________________
+% Education
+\section{\mysidestyle \faMortarBoard~Education}
+
+\textbf{University of Chicago}, Chicago, Illinois \hfill \faCalendar\ \textbf{September 2012 -- July 2018}\\
+\textsl{Ph.D. Physics}, David Miller\\
+\href{https://kratsg.github.io/thesis/?utm_source=cv}{\faicon{link}~\textsl{The search for supersymmetry in hadronic final states using boosted object reconstruction}}\\
+ISBN: \href{https://books.google.com/books?vid=ISBN978-3-030-34548-8}{978-3-030-34548-8}\\[2.5mm]
+%
+\textbf{California Institute of Technology}, Pasadena, California \hfill \faCalendar\ \textbf{September 2008 -- June 2012}\\
+\textsl{B.S. Physics}, Kenneth Libbrecht and Harvey Newman\\
+\href{https://www.dropbox.com/s/h0mpop96cn563bq/Thesis.pdf?dl=0}{\faicon{link}~\textsl{Optical Coating Brownian Thermal Noise in Gravitational Wave Detectors}}
+
+\end{resume}
+\end{document}
