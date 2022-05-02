@@ -78,13 +78,13 @@ anchorcolor = blue]{hyperref}
 \setlength{\projectdateplacelength}{1.0\linewidth}
 \newcommand{\story}[4]{%
     \begin{minipage}[t]{\jobdateplacelength}% minipage for left column with date/place
-        \footnotesize
+        \small
         \begin{minipage}[t]{3mm}% wrap marker in minipage to allow multi-line places
             \makebox[3mm][c]{\faAngleDoubleDown}
         \end{minipage}%
         \hspace{0.5em}%
         \begin{minipage}[t]{\dimexpr \projectdateplacelength-3mm-0.5em}% wrap place in minipage to allow multi-line places
-            \href{#1}{\normalsize#2}%
+            \href{#1}{\small#2}%
             \ifstrequal{#4}{}{}{%
             ---
             \readlist*\mylist{#4}% star option removes surrounding whitespace
@@ -95,11 +95,11 @@ anchorcolor = blue]{hyperref}
     \ifstrequal{#3}{}{}{%
         \par \vspace{-1.0em} \hspace{1.5em}%
         \begin{minipage}[t]{\dimexpr \linewidth-2em}
-        #3
+        \small #3
         \end{minipage}
     }%
     \par\normalsize
-    \vspace{0.25em}
+    \vspace{-0.5em}
 }
 
 %______________________________________________________________________________________________________________________
@@ -124,7 +124,8 @@ anchorcolor = blue]{hyperref}
 % Research Interests
 \section{\mysidestyle Summary}
 \begin{list2}
-  \item Experimental particle physicist on the ATLAS detector at CERN looking to transition to the private sector.
+  \small
+  \item Particle physicist on the ATLAS detector at CERN looking to transition to the private sector.
   \item ``Big data scientist'' analyzing petabytes of collisions for signs of new physics.
   \item Passionate about building reusable, robust, containerized data analysis pipelines, creating actionable data products, and developing software to improve user experience.
 \end{list2}
@@ -133,25 +134,20 @@ anchorcolor = blue]{hyperref}
 
 \section{\mysidestyle \faCode~Highlighted\\Projects}
 
-{\small
-  \story{https://scikit-hep.org/pyhf/}{pyhf}{Created a python-only hypothesis testing framework which speeds up asymptotic statistical fits by a few orders of magnitude, using tensor algebra libraries such as \texttt{jax} and \texttt{pytorch}.}{statistics,GPU,numpy,scipy,tensorflow,jax,pytorch,auto-diff}
-
-  \story{https://hsf-training.github.io/hsf-training-cicd/}{GitLab CI/CD Training}{Produced a three-hour tutorial using GitLab CI/CD with closed-captioned YouTube videos aimed at teaching physicists how to develop testable and reproducible analyses.}{gitlab,tutorial,continuous integration,python,C++}
-
-  \story{https://pypi.org/project/itkdb/}{itkdb}{Developed a user-friendly python interface to a quasi-RESTful API used to register, test, and ship millions of detector components for the ATLAS detector upgrade in 2028. This speeds up custom tooling needed by third-party vendors for interacting with the database.}{python,betamax,requests,unit tests,integration tests,mongodb}
-
-  \story{https://gfex.cern.ch/}{gFEX}{Collaborated with a team of physicists and engineers to design a single PCB to process 40 TB/s of raw data from the detector. Pioneered the embedded processor firmware currently in use.}{FPGA,firmware,embedded OS,cross-compilation}
-
-  \story{https://gitlab.cern.ch/berkeleylab/labRemote}{labRemote}{Wrote the python-bindings for a C++ framework that slow-controls laboratory hardware, and enhanced the CI/CD to deploy pre-built, relocatable binaries to make it easier for technicians and users to install.}{pybind11,python,C++,CI/CD,wheels}
-}
+\story{https://scikit-hep.org/pyhf/}{pyhf}{Created a python-only hypothesis testing framework which speeds up asymptotic statistical fits by a few orders of magnitude, using tensor algebra libraries such as \texttt{jax} and \texttt{pytorch}.}{statistics,GPU,numpy,scipy,tensorflow,jax,pytorch,auto-diff}
+\story{https://hsf-training.github.io/hsf-training-cicd/}{GitLab CI/CD Training}{Produced a three-hour tutorial using GitLab CI/CD with closed-captioned YouTube videos aimed at teaching physicists how to develop testable and reproducible analyses.}{gitlab,tutorial,continuous integration,python,C++}
+\story{https://pypi.org/project/itkdb/}{itkdb}{Developed a user-friendly python interface to a quasi-RESTful API used to register, test, and ship millions of detector components for the ATLAS detector upgrade in 2028. This speeds up custom tooling needed by third-party vendors for interacting with the database.}{python,betamax,requests,unit tests,integration tests,mongodb}
+\story{https://gfex.cern.ch/}{gFEX}{Collaborated with a team of physicists and engineers to design a single PCB to process 40 TB/s of raw data from the detector. Pioneered the embedded processor firmware currently in use.}{FPGA,firmware,embedded OS,cross-compilation}
+\story{https://gitlab.cern.ch/berkeleylab/labRemote}{labRemote}{Wrote the python-bindings for a C++ framework that slow-controls laboratory hardware, and enhanced the CI/CD to deploy pre-built, relocatable binaries to make it easier for technicians and users to install.}{pybind11,python,C++,CI/CD,wheels}
 
 %__________________________________________________________________________________________________________________
 % Professional Experience
 \section{\mysidestyle \faGears~Work\\History}
 
-\textbf{SCIPP}, Santa Cruz, California \hfill \textbf{August 2018 -- present}\\
+\textbf{SCIPP}, Santa Cruz, California \hfill \faCalendar\ \textbf{August 2018 -- present}\\
 \textsl{Post-doctoral Researcher, ATLAS Experiment at CERN}
 \begin{list2}
+  \small
   \item Led the effort within the 5000-person collaboration to adopt GitLab CI/CD for analysis development, paper publication, and documentation.
   \item Coordinated HPC resources for generating billions of Monte Carlo events for physics analyses
   \item Organized and instructed in software tutorials for hundreds of physicists.
@@ -162,6 +158,7 @@ anchorcolor = blue]{hyperref}
 \textbf{UChicago}, Chicago, Illinois \hfill \faCalendar\ \textbf{August 2012 -- July 2018}\\
 \textsl{Graduate Research Scientist}
 \begin{list2}
+  \small
   \item Migrated the 500k+ LOC C++ offline analysis project from SVN to Git and made it public.
   \item Collaborated with engineers on instrumentation design for the upgrade of the ATLAS detector real-time hardware-based decision-making system to process 40 TB of data every second.
   \item Developed and maintained a user-friendly C++ analysis framework for physics across multiple domains including Standard Model, searches for new physics, and calibrations.
@@ -171,15 +168,13 @@ anchorcolor = blue]{hyperref}
 %__________________________________________________________________________________________________________________
 % Education
 \section{\mysidestyle \faMortarBoard~Education}
-
-\textbf{University of Chicago}, Chicago, Illinois \hfill \faCalendar\ \textbf{September 2012 -- July 2018}\\
-\textsl{Ph.D. Physics}, David Miller\\
-\href{https://kratsg.github.io/thesis/?utm_source=cv}{\faicon{link}~\textsl{The search for supersymmetry in hadronic final states using boosted object reconstruction}}\\
-ISBN: \href{https://books.google.com/books?vid=ISBN978-3-030-34548-8}{978-3-030-34548-8}\\[2.5mm]
+{
+\small
+\tag{Ph.D.}~\textbf{University of Chicago}, Chicago, Illinois \hfill \faCalendar\ \textbf{September 2012 -- July 2018}\\
+\href{https://books.google.com/books?vid=ISBN978-3-030-34548-8}{\faicon{link}~\textsl{The search for supersymmetry in hadronic final states using boosted object reconstruction}}\\[2mm]
 %
-\textbf{California Institute of Technology}, Pasadena, California \hfill \faCalendar\ \textbf{September 2008 -- June 2012}\\
-\textsl{B.S. Physics}, Kenneth Libbrecht and Harvey Newman\\
+\tag{B.S.}~\textbf{California Institute of Technology}, Pasadena, California \hfill \faCalendar\ \textbf{September 2008 -- June 2012}\\
 \href{https://www.dropbox.com/s/h0mpop96cn563bq/Thesis.pdf?dl=0}{\faicon{link}~\textsl{Optical Coating Brownian Thermal Noise in Gravitational Wave Detectors}}
-
+}
 \end{resume}
 \end{document}
