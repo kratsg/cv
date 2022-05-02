@@ -32,6 +32,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: resume_GiordonStark_swe.tex
+          latexmk_use_xelatex: true
       - name: Move to deploy directory
         run: |
           mv cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
