@@ -13,23 +13,30 @@ concurrency:
   group: ci-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions: {}
+
 jobs:
   build_latex:
+    name: Build LaTeX document
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # checkout the repository
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Inject environment variables
         run: |
           sed -i env.tex -e "s/GITHUBCOMMITHASH/${GITHUB_SHA:0:6}/g"
           sed -i env.tex -e "s/GITHUBRUNNUMBER/${GITHUB_RUN_ID}/g"
           cat env.tex
       - name: Compile cv
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
         with:
           root_file: cv_GiordonStark.tex
       - name: Compile SWE resume
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
         with:
           root_file: resume_GiordonStark_swe.tex
           latexmk_use_xelatex: true
@@ -37,9 +44,32 @@ jobs:
         run: |
           mv cv_GiordonStark.pdf deploy/cv_GiordonStark.pdf
           mv resume_GiordonStark_swe.pdf deploy/resume_GiordonStark_swe.pdf
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: Upload deploy artifact
         if: github.event_name == 'push'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: deploy
+          path: deploy
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build_latex
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push built pdfs to gh-pages branch
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true # required so github-pages-deploy-action can push using the checked-out credentials
+      - name: Download deploy artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: deploy
+          path: deploy
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@0f24da7de3e7e135102609a4c9633b025be8411b # 4.1.5
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: deploy # The folder the action should deploy.
