@@ -69,7 +69,7 @@ jobs:
           name: deploy
           path: deploy
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@0f24da7de3e7e135102609a4c9633b025be8411b # 4.1.5
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # 4.8.0
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: deploy # The folder the action should deploy.
